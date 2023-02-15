@@ -74,7 +74,7 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
+        Response response = given().spec(spec).auth().basic("admin","1234").contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
         response.prettyPrint();
 
         //Do Assertion
